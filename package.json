@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start -p $PORT",
     "unit_test": "./node_modules/mocha/bin/mocha",
-    "lint_test": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\""
+    "lint_check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint_write": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "dependencies": {
     "classnames": "^2.2.6",
