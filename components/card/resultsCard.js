@@ -7,6 +7,7 @@ export default function ResultsCard({ id, name, votes }) {
       <div className={styles.flipCardInner}>
         <div className={styles.flipCardFront}>
           <h1>{name}</h1>
+          <p>{votes}</p>
         </div>
         <div className={styles.flipCardBack}>
           <h1>{name}</h1>

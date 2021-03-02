@@ -10,8 +10,9 @@ export default function handler(req, res) {
 
 let totalVotes = 0;
 let votables = [];
-addVotable("tom");
-addVotable("rick");
+addVotable("Hulk");
+addVotable("Spiderman");
+addVotable("Ironman");
 
 export function addVote(votableId) {
   let validateVote = true;
