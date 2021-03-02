@@ -49,7 +49,10 @@ export default function Voting({ allPostsData }) {
         <p>Select a tile you'd like to place your vote on</p>
       </section>
       <section>
-        <CardContainer votingCards={allPostsData.votingCards} onCardClick={handleCardClick} />
+        <CardContainer
+          votingCards={allPostsData.votingCards}
+          onCardClick={handleCardClick}
+        />
       </section>
     </Layout>
   );
