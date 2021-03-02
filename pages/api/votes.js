@@ -1,8 +1,9 @@
 export default function handler(req, res) {
   if (req.method === "POST") {
-    let votableId = req.body.votableId;
+    let body = JSON.parse(req.body);
+    let votableId = body.votableId;
     if (votableId) addVote(votableId);
-    res.status(200).json({ text: "Post" });
+    res.status(200).json({ votedFor: votableId });
   } else if (req.method === "GET") {
     res.status(200).json({ votables: votables, totalVotes: totalVotes });
   }
