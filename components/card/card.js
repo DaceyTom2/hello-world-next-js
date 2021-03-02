@@ -1,11 +1,14 @@
 import Image from "next/image";
 import styles from "./card.module.css";
 
-export default function Card({ name, description, image }) {
-  console.log(image);
+export default function Card({ id, name, description, image, onCardClick }) {
+  let handleCardClick = (e) => {
+    onCardClick(e, id);
+  };
+
   return (
     <div className={styles.flipCard}>
-      <div className={styles.flipCardInner}>
+      <div className={styles.flipCardInner} onClick={handleCardClick} id={id}>
         <div className={styles.flipCardFront}>
           <Image priority src={image} height={140} width={150} />
           <p>{name}</p>
