@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useGetResults } from "../lib/useResults";
 
 export default function Results() {
-  const { results, error } = useGetResults("http://localhost:3000/api/votes");
+  const { results, error } = useGetResults("/api/votes");
   if (error) return <h1>Something went wrong!</h1>;
   if (!results) return <h1>Loading...</h1>;
   return (
