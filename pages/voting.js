@@ -3,6 +3,7 @@ import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import CardContainer from "../components/card/cardContainer";
 import Link from "next/link";
+import { usePostVotes } from "../lib/useVotes";
 
 export async function getStaticProps() {
   const allPostsData = {
@@ -36,7 +37,7 @@ export async function getStaticProps() {
 }
 
 export const handleCardClick = (e, id) => {
-  console.log(id);
+  usePostVotes("/api/votes", id);
 };
 
 export default function Voting({ allPostsData }) {
