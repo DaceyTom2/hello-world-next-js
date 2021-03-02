@@ -34,6 +34,10 @@ export async function getStaticProps() {
   };
 }
 
+export const handleCardClick = (e, id) => {
+  console.log(id);
+};
+
 export default function Voting({ allPostsData }) {
   return (
     <Layout>
@@ -45,7 +49,7 @@ export default function Voting({ allPostsData }) {
         <p>Select a tile you'd like to place your vote on</p>
       </section>
       <section>
-        <CardContainer votingCards={allPostsData.votingCards} />
+        <CardContainer votingCards={allPostsData.votingCards} onCardClick={handleCardClick} />
       </section>
     </Layout>
   );
