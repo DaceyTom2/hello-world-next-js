@@ -2,5 +2,5 @@
 key: "tom"
 name: "Tom"
 description: "The Dev"
-image: "/images/Tom.png"
+image: "/images/tom.png"
 ---
