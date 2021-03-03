@@ -19,7 +19,6 @@ export function loadVotables() {
     addVotable(fileName.params.id);
   });
 }
-loadVotables();
 
 export function addVote(votableId) {
   let validateVote = true;
@@ -33,3 +32,11 @@ export function addVotable(name) {
   let votable = { id: name, name: name, votes: 0 };
   votables.push(votable);
 }
+
+export function resetVotes() {
+  totalVotes = 0;
+  votables = [];
+  loadVotables();
+}
+
+resetVotes();
