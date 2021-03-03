@@ -5,6 +5,7 @@ import CardContainer from "../components/card/cardContainer";
 import Link from "next/link";
 import { usePostVotes } from "../lib/useVotes";
 import { getSortedVotingData } from "../lib/votesData";
+import { useRouter } from "next/router";
 
 export async function getStaticProps() {
   const allVoteCardData = getSortedVotingData();
@@ -16,11 +17,14 @@ export async function getStaticProps() {
   };
 }
 
-export const handleCardClick = (e, id) => {
-  usePostVotes("/api/votes", id);
-};
-
 export default function Voting({ allVoteCardData }) {
+  const router = useRouter();
+
+  const handleCardClick = (e, id) => {
+    usePostVotes("/api/votes", id);
+    router.push("results");
+  };
+
   return (
     <Layout>
       <Head>

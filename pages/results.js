@@ -15,8 +15,7 @@ export default function Results() {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <h1>Voting tiles</h1>
-        <p>Select a tile you'd like to place your vote on</p>
+        <h1>Voting Results</h1>
       </section>
       <section>
         <ResultsCardContainer resultsCards={results.votables} />
