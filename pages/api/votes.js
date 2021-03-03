@@ -1,3 +1,5 @@
+import { getAllVotingCardIds } from "../../lib/votesData";
+
 export default function handler(req, res) {
   if (req.method === "POST") {
     let body = JSON.parse(req.body);
@@ -11,9 +13,13 @@ export default function handler(req, res) {
 
 let totalVotes = 0;
 let votables = [];
-addVotable("Hulk");
-addVotable("Spiderman");
-addVotable("Ironman");
+
+export function loadVotables() {
+  getAllVotingCardIds().map((fileName) => {
+    addVotable(fileName.params.id);
+  });
+}
+loadVotables();
 
 export function addVote(votableId) {
   let validateVote = true;

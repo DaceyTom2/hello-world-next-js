@@ -4,34 +4,14 @@ import utilStyles from "../styles/utils.module.css";
 import CardContainer from "../components/card/cardContainer";
 import Link from "next/link";
 import { usePostVotes } from "../lib/useVotes";
+import { getSortedVotingData } from "../lib/votesData";
 
 export async function getStaticProps() {
-  const allPostsData = {
-    votingCards: [
-      {
-        key: "Hulk",
-        name: "The Hulk",
-        description: "Strong green man",
-        image: "/images/hulk.png",
-      },
-      {
-        key: "Spiderman",
-        name: "Spiderman",
-        description: "Spider like senses",
-        image: "/images/spiderman.png",
-      },
-      {
-        key: "Ironman",
-        name: "Ironman",
-        description: "Tech enabled nerd",
-        image: "/images/ironman.png",
-      },
-    ],
-  };
+  const allVoteCardData = getSortedVotingData();
 
   return {
     props: {
-      allPostsData,
+      allVoteCardData,
     },
   };
 }
@@ -40,7 +20,7 @@ export const handleCardClick = (e, id) => {
   usePostVotes("/api/votes", id);
 };
 
-export default function Voting({ allPostsData }) {
+export default function Voting({ allVoteCardData }) {
   return (
     <Layout>
       <Head>
@@ -52,7 +32,7 @@ export default function Voting({ allPostsData }) {
       </section>
       <section>
         <CardContainer
-          votingCards={allPostsData.votingCards}
+          votingCards={allVoteCardData}
           onCardClick={handleCardClick}
         />
         <Link href={`results`}>
