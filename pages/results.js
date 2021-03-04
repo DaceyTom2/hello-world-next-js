@@ -23,10 +23,12 @@ export default function Results() {
       </section>
       <section>
         <ResultsCardContainer resultsCards={results.votables} />
-        <Link href={`voting`}>
-          <a>Voting</a>
-        </Link>
         <button onClick={handleResetVotesClick}>Clear Results</button>
+        <p>
+          <Link href={`voting`}>
+            <a>Voting</a>
+          </Link>
+        </p>
       </section>
     </Layout>
   );
