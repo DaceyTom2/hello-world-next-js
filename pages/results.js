@@ -5,13 +5,16 @@ import ResultsCardContainer from "../components/card/resultsCardContainer";
 import Link from "next/link";
 import { useGetResults } from "../lib/useResults";
 import { usePostResetVotes } from "../lib/useVotes";
+import { useRouter } from "next/router";
 
 export default function Results() {
   const { results, error } = useGetResults("/api/votes");
   if (error) return <h1>Something went wrong!</h1>;
   if (!results) return <h1>Loading...</h1>;
+  const router = useRouter();
   let handleResetVotesClick = (e) => {
     usePostResetVotes();
+    router.push("voting");
   };
   return (
     <Layout>
@@ -23,10 +26,10 @@ export default function Results() {
       </section>
       <section>
         <ResultsCardContainer resultsCards={results.votables} />
-        <Link href={`voting`}>
-          <a>Voting</a>
-        </Link>
-        <button onClick={handleResetVotesClick}>Clear Results</button>
+        <br />
+        <button class="btn btn-primary" onClick={handleResetVotesClick}>
+          Clear Results
+        </button>
       </section>
     </Layout>
   );
