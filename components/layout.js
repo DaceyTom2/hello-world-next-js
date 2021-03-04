@@ -5,11 +5,11 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
 const name = "Thomas Dacey";
-export const siteTitle = "Next.js Sample Website";
+export const siteTitle = "SITE-VOTE";
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div className="cd-hero">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -25,49 +25,64 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
+      <div class="cd-slider-nav">
+        <nav class="navbar">
+          <div class="tm-navbar-bg">
             <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
+              <a class="navbar-brand text-uppercase">
+                <i class="fa fa-flash tm-brand-icon"></i>
+                {siteTitle}
               </a>
             </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
+            <button
+              class="navbar-toggler hidden-lg-up"
+              type="button"
+              data-toggle="collapse"
+              data-target="#tmNavbar"
+            >
+              &#9776;
+            </button>
+            <div
+              class="collapse navbar-toggleable-md text-xs-center text-uppercase tm-navbar"
+              id="tmNavbar"
+            >
+              <ul class="nav navbar-nav">
+                <li class="nav-item">
+                  <Link href="/">
+                    <a class="nav-link">Home</a>
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link href="/voting">
+                    <a class="nav-link">Voting</a>
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link href="/results">
+                    <a class="nav-link">Results</a>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <ul class="cd-hero-slider">
+        <li class="selected">
+          <div class="cd-full-width">
+            <div
+              class="container-fluid js-tm-page-content tm-page-pad"
+              data-page-no="1"
+            >
+              <div class="row">
+                <div class="tm-3-col-container">
+                  <main>{children}</main>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   );
 }

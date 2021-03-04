@@ -2,5 +2,5 @@
 key: "kyle"
 name: "Kyle"
 description: "The Legend"
-image: "/images/kyle.png"
+image: "/images/votables/kyle.png"
 ---

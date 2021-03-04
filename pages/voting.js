@@ -32,16 +32,12 @@ export default function Voting({ allVoteCardData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <h1>Voting tiles</h1>
-        <p>Select a tile you'd like to place your vote on</p>
       </section>
       <section>
         <CardContainer
           votingCards={allVoteCardData}
           onCardClick={handleCardClick}
         />
-        <Link href={`results`}>
-          <a>Results</a>
-        </Link>
       </section>
     </Layout>
   );

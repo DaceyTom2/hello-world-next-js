@@ -7,16 +7,14 @@ export default function Card({ id, name, description, image, onCardClick }) {
   };
 
   return (
-    <div className={styles.flipCard} onClick={handleCardClick} id={id}>
-      <div className={styles.flipCardInner}>
-        <div className={styles.flipCardFront}>
-          <Image priority src={image} height={140} width={150} />
-          <p>{name}</p>
-        </div>
-        <div className={styles.flipCardBack}>
-          <h1>{name}</h1>
-          <p>{description}</p>
-        </div>
+    <div
+      class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tm-3-col-textbox"
+      onClick={handleCardClick}
+    >
+      <div class="text-xs-left tm-textbox tm-textbox-padding tm-bg-white-translucent tm-3-col-textbox-inner">
+        <Image priority src={image} height={150} width={300} />
+        <h2 class="tm-text-title">{name}</h2>
+        <p class="tm-text">{description}</p>
       </div>
     </div>
   );
