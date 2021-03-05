@@ -747,8 +747,7 @@ figure.effect-ruby:hover img {
 	}
 
 	.tm-3-col-textbox {
-		padding-left: 15px;
-		padding-right: 15px;
+		padding: 15px;
 	}
 }
 
