@@ -1,6 +1,6 @@
 ---
 key: "kyle"
 name: "Kyle"
-description: "The Legend"
-image: "/images/votables/kyle.png"
+description: "The Earth"
+image: "/images/voteables/kyle.png"
 ---

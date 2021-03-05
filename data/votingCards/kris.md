@@ -2,5 +2,5 @@
 key: "kris"
 name: "Kris"
 description: "The Chef"
-image: "/images/votables/kris.png"
+image: "/images/voteables/kris.png"
 ---
