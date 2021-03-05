@@ -1,6 +1,6 @@
 ---
 key: "kev"
 name: "Kev"
-description: "The MissingNo"
-image: "/images/voteables/missingno.jpeg"
+description: "The Movie Buff"
+image: "/images/voteables/kev.png"
 ---
