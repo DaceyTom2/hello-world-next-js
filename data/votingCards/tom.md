@@ -1,6 +1,6 @@
 ---
 key: "tom"
 name: "Tom"
-description: "The Dev"
+description: "The Site-Vote"
 image: "/images/voteables/tom.png"
 ---

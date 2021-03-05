@@ -1,6 +1,6 @@
 ---
-key: "kris"
-name: "Kris"
-description: "The Chef"
-image: "/images/voteables/kris.png"
+key: "beph"
+name: "Ephriem and Ben"
+description: "The Weather Peeps"
+image: "/images/voteables/beph.png"
 ---

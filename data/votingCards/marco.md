@@ -1,6 +1,6 @@
 ---
-key: "kris"
-name: "Kris"
-description: "The Chef"
-image: "/images/voteables/kris.png"
+key: "marco"
+name: "Marco"
+description: "The F1"
+image: "/images/voteables/marco.png"
 ---

@@ -1,6 +1,6 @@
 ---
-key: "kris"
-name: "Kris"
-description: "The Chef"
-image: "/images/voteables/kris.png"
+key: "mikep"
+name: "Mike P"
+description: "The SCRUM"
+image: "/images/voteables/missingno.jpeg"
 ---
